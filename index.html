@@ -16,6 +16,9 @@
       --coral: #e97966;
       --blue: #8ab7c1;
       --yellow: #f8d77a;
+      --lavender: #b9a7d9;
+      --mint: #acd9c8;
+      --rose: #e7a5b3;
       --line: rgba(41, 49, 61, .12);
       --shadow: 0 26px 70px rgba(111, 72, 55, .14);
     }
@@ -164,6 +167,8 @@
       font-size: 14px;
       line-height: 1.4;
     }
+    .hero-photo { animation: photoFloat 6s ease-in-out infinite; }
+    @keyframes photoFloat { 0%, 100% { transform: rotate(2.5deg) translateY(0); } 50% { transform: rotate(-1deg) translateY(-12px); } }
 
     .section { width: min(1140px, calc(100% - 40px)); margin: auto; padding: 95px 0; }
     .section-heading { max-width: 670px; margin-bottom: 42px; }
@@ -199,6 +204,46 @@
     .milestone strong { display: block; margin-bottom: 12px; font-size: 42px; font-weight: normal; }
     .milestone h3 { margin: 0 0 10px; font-size: 20px; }
     .milestone p { margin: 0; color: var(--soft-ink); line-height: 1.6; }
+
+    .love-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .love-card { min-height: 210px; padding: 25px; color: var(--ink); border-radius: 2px 24px 2px 24px; box-shadow: 0 14px 32px rgba(111, 72, 55, .1); animation: breathe 5s ease-in-out infinite; }
+    .love-card:nth-child(1) { background: #ffe3d5; }
+    .love-card:nth-child(2) { background: #d9eef0; animation-delay: .4s; }
+    .love-card:nth-child(3) { background: #e9def4; animation-delay: .8s; }
+    .love-card:nth-child(4) { background: #fff0bb; animation-delay: 1.2s; }
+    .love-card span { display: block; margin-bottom: 20px; font-size: 32px; }
+    .love-card h3 { margin: 0 0 10px; font-size: 20px; font-weight: normal; }
+    .love-card p { margin: 0; color: #69717b; line-height: 1.6; }
+    @keyframes breathe { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+    .timeline { display: grid; grid-template-columns: repeat(4, 1fr); position: relative; gap: 18px; }
+    .timeline::before { content: ""; position: absolute; top: 15px; right: 9%; left: 9%; height: 2px; background: linear-gradient(90deg, var(--peach), var(--blue), var(--lavender), var(--yellow)); }
+    .timeline-item { position: relative; z-index: 1; padding-top: 42px; }
+    .timeline-dot { position: absolute; top: 6px; left: 0; width: 20px; height: 20px; border: 5px solid var(--cream); border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 2px var(--coral); }
+    .timeline-item:nth-child(2) .timeline-dot { background: var(--blue); box-shadow: 0 0 0 2px var(--blue); }
+    .timeline-item:nth-child(3) .timeline-dot { background: var(--lavender); box-shadow: 0 0 0 2px var(--lavender); }
+    .timeline-item:nth-child(4) .timeline-dot { background: var(--yellow); box-shadow: 0 0 0 2px var(--yellow); }
+    .timeline-item strong { color: var(--coral); font-family: Arial, sans-serif; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+    .timeline-item h3 { margin: 11px 0 8px; font-size: 21px; font-weight: normal; }
+    .timeline-item p { margin: 0; color: var(--soft-ink); line-height: 1.6; }
+
+    .keepsake { display: grid; grid-template-columns: .7fr 1.3fr; gap: 30px; align-items: center; padding: clamp(30px, 6vw, 68px); color: #fff; background: linear-gradient(120deg, #435b69, #6f8292 55%, #9ab6b4); box-shadow: var(--shadow); overflow: hidden; }
+    .keepsake-mark { color: var(--yellow); font-size: clamp(78px, 12vw, 150px); line-height: .7; text-align: center; animation: heartbeat 2.4s ease-in-out infinite; }
+    @keyframes heartbeat { 0%, 100% { transform: scale(1); } 12% { transform: scale(1.12); } 22% { transform: scale(1); } 32% { transform: scale(1.08); } }
+    .keepsake h2 { margin: 0 0 16px; font-size: clamp(34px, 5vw, 58px); font-weight: normal; line-height: 1; }
+    .keepsake p { margin: 0; color: rgba(255,255,255,.78); font-size: 18px; line-height: 1.75; }
+    .keepsake button { margin-top: 24px; color: var(--ink); background: var(--yellow); }
+    .hidden-note { display: none; margin-top: 19px !important; color: #fff !important; font-style: italic; }
+    .hidden-note.show { display: block; animation: noteReveal .8s cubic-bezier(.16, 1, .3, 1) both; }
+    @keyframes noteReveal { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+    .blessing-wall { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: auto; }
+    .blessing { padding: 14px 20px; border-radius: 999px; font-size: 17px; box-shadow: 0 8px 20px rgba(111, 72, 55, .08); animation: drift 4s ease-in-out infinite; }
+    .blessing:nth-child(4n + 1) { background: #ffe3d5; }
+    .blessing:nth-child(4n + 2) { background: #d9eef0; animation-delay: .35s; }
+    .blessing:nth-child(4n + 3) { background: #e9def4; animation-delay: .7s; }
+    .blessing:nth-child(4n) { background: #fff0bb; animation-delay: 1.05s; }
+    @keyframes drift { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-6px) rotate(1deg); } }
 
     .celebration {
       display: grid;
@@ -268,7 +313,9 @@
       .memories { grid-template-columns: 1fr 1fr; grid-template-rows: 320px 240px 240px; }
       .memory:first-child { grid-column: 1 / 3; grid-row: auto; }
       .memory:last-child { grid-column: 1 / 3; }
-      .milestone-grid, .surprise-grid, .celebration { grid-template-columns: 1fr; }
+      .milestone-grid, .love-grid, .surprise-grid, .celebration, .keepsake { grid-template-columns: 1fr; }
+      .timeline { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+      .timeline::before { display: none; }
     }
     @media (max-width: 520px) {
       .topbar, .hero, .section { width: min(100% - 28px, 1140px); }
@@ -281,6 +328,9 @@
       .memory, .memory:first-child, .memory:last-child { height: 300px; min-height: 0; }
       .countdown { gap: 5px; }
       .countdown-item { padding: 14px 2px; }
+      .timeline { grid-template-columns: 1fr; }
+      .timeline-item { padding-top: 33px; }
+      .keepsake-mark { margin-bottom: 20px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
@@ -347,6 +397,56 @@
         <article class="milestone"><strong>01</strong><h3>The first smile</h3><p>A tiny moment that made every heart in the room grow three sizes.</p></article>
         <article class="milestone"><strong>12</strong><h3>Months of magic</h3><p>A whole year of growing, discovering, cuddling, and making memories.</p></article>
         <article class="milestone"><strong>∞</strong><h3>Endless love</h3><p>The one thing that has never stopped growing, not even for a single day.</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="love-title">
+      <div class="section-heading">
+        <div class="soft-label">Why you are our favorite</div>
+        <h2 id="love-title">The little things we love most.</h2>
+      </div>
+      <div class="love-grid">
+        <article class="love-card"><span>☀️</span><h3>Your happy eyes</h3><p>They make even an ordinary morning feel like a celebration.</p></article>
+        <article class="love-card"><span>🤍</span><h3>Your gentle heart</h3><p>You bring a soft kind of magic wherever your tiny hands go.</p></article>
+        <article class="love-card"><span>✨</span><h3>Your brave spirit</h3><p>Every new step reminds us how beautifully strong you are becoming.</p></article>
+        <article class="love-card"><span>🌼</span><h3>Your little laugh</h3><p>The sweetest sound in the world, and our favorite reason to smile.</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="timeline-title">
+      <div class="section-heading">
+        <div class="soft-label">A tiny timeline</div>
+        <h2 id="timeline-title">From hello to one.</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item"><span class="timeline-dot"></span><strong>September</strong><h3>Hello, Ahmed</h3><p>The day our world changed in the most beautiful way.</p></article>
+        <article class="timeline-item"><span class="timeline-dot"></span><strong>First smiles</strong><h3>Little joy</h3><p>Sleepy cuddles, curious eyes, and smiles that melted every heart.</p></article>
+        <article class="timeline-item"><span class="timeline-dot"></span><strong>New adventures</strong><h3>Growing fast</h3><p>New sounds, new places, and a personality shining brighter each day.</p></article>
+        <article class="timeline-item"><span class="timeline-dot"></span><strong>Today</strong><h3>One wonderful year</h3><p>A whole chapter of love, wrapped up in one precious little boy.</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="keepsake-title">
+      <div class="keepsake">
+        <div class="keepsake-mark">♥</div>
+        <div>
+          <div class="soft-label">A keepsake for later</div>
+          <h2 id="keepsake-title">For the Ahmed who reads this one day.</h2>
+          <p>Right now you are small enough to fit in our arms. One day you will be tall, curious, and chasing dreams of your own. Please remember this: you have been loved completely from the very beginning.</p>
+          <button class="button" id="keepsakeButton" type="button">Open your secret note</button>
+          <p class="hidden-note" id="hiddenNote">You are our once-in-a-lifetime kind of wonderful. Keep shining, always.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="blessing-title">
+      <div class="section-heading" style="margin-right:auto;margin-left:auto;text-align:center;">
+        <div class="soft-label">A wall of wishes</div>
+        <h2 id="blessing-title">Every good thing for you.</h2>
+        <p>May your life be full of the things that make your heart feel at home.</p>
+      </div>
+      <div class="blessing-wall">
+        <span class="blessing">A brave heart</span><span class="blessing">Endless giggles</span><span class="blessing">Big adventures</span><span class="blessing">Gentle dreams</span><span class="blessing">Kind friends</span><span class="blessing">Bright mornings</span><span class="blessing">Warm hugs</span><span class="blessing">A joyful life</span>
       </div>
     </section>
 
@@ -435,6 +535,12 @@
       celebrate();
       document.getElementById("wishButton").textContent = "Wish sent with love ♥";
       document.getElementById("wishButton").classList.add("revealed");
+    });
+
+    document.getElementById("keepsakeButton").addEventListener("click", () => {
+      document.getElementById("hiddenNote").classList.add("show");
+      document.getElementById("keepsakeButton").textContent = "Your secret note is open ♥";
+      celebrate();
     });
 
     const surpriseCards = document.querySelectorAll(".reveal-card");
