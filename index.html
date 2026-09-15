@@ -216,6 +216,44 @@
     .countdown-item strong { display: block; color: var(--yellow); font-size: clamp(24px, 4vw, 42px); font-weight: normal; }
     .countdown-item span { color: rgba(255,255,255,.58); font-family: Arial, sans-serif; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
 
+    .surprise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .surprise-card {
+      position: relative;
+      min-height: 260px;
+      padding: 30px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 45px rgba(111, 72, 55, .08);
+      transition: transform .45s cubic-bezier(.16, 1, .3, 1), box-shadow .45s ease;
+    }
+    .surprise-card::before {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      right: -72px;
+      bottom: -78px;
+      border-radius: 50%;
+      background: var(--yellow);
+      opacity: .32;
+      transition: transform .5s ease;
+    }
+    .surprise-card:nth-child(2)::before { background: var(--blue); }
+    .surprise-card:nth-child(3)::before { background: var(--peach); }
+    .surprise-card:hover { transform: translateY(-10px) rotate(-1deg); box-shadow: 0 30px 65px rgba(111, 72, 55, .16); }
+    .surprise-card:hover::before { transform: scale(1.6); }
+    .surprise-icon { position: relative; font-size: 42px; }
+    .surprise-card h3 { position: relative; margin: 24px 0 10px; font-size: 23px; font-weight: normal; }
+    .surprise-card p { position: relative; margin: 0; color: var(--soft-ink); line-height: 1.65; }
+    .sparkle { position: absolute; color: var(--coral); animation: shimmer 2.5s ease-in-out infinite; }
+    .sparkle.one { top: 18px; right: 24px; }
+    .sparkle.two { top: 34px; right: 44px; font-size: 11px; animation-delay: .7s; }
+    @keyframes shimmer { 0%, 100% { opacity: .25; transform: scale(.7) rotate(0); } 50% { opacity: 1; transform: scale(1.25) rotate(90deg); } }
+    .reveal-card { opacity: 0; transform: translateY(28px); }
+    .reveal-card.visible { animation: cardIn .8s cubic-bezier(.16, 1, .3, 1) forwards; }
+    @keyframes cardIn { to { opacity: 1; transform: translateY(0); } }
+
     footer { padding: 50px 20px 60px; text-align: center; color: var(--soft-ink); line-height: 1.7; }
     footer strong { color: var(--coral); }
     .heart { color: var(--coral); }
@@ -230,7 +268,7 @@
       .memories { grid-template-columns: 1fr 1fr; grid-template-rows: 320px 240px 240px; }
       .memory:first-child { grid-column: 1 / 3; grid-row: auto; }
       .memory:last-child { grid-column: 1 / 3; }
-      .milestone-grid, .celebration { grid-template-columns: 1fr; }
+      .milestone-grid, .surprise-grid, .celebration { grid-template-columns: 1fr; }
     }
     @media (max-width: 520px) {
       .topbar, .hero, .section { width: min(100% - 28px, 1140px); }
@@ -312,6 +350,33 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="surprise-title">
+      <div class="section-heading">
+        <div class="soft-label">Three little wishes</div>
+        <h2 id="surprise-title">The sweetest surprises are still ahead.</h2>
+      </div>
+      <div class="surprise-grid">
+        <article class="surprise-card reveal-card">
+          <span class="sparkle one">✦</span><span class="sparkle two">✦</span>
+          <div class="surprise-icon">🌙</div>
+          <h3>Dream big, little one.</h3>
+          <p>May your nights be peaceful and your imagination always have somewhere beautiful to go.</p>
+        </article>
+        <article class="surprise-card reveal-card">
+          <span class="sparkle one">✦</span><span class="sparkle two">✦</span>
+          <div class="surprise-icon">🧸</div>
+          <h3>Stay wonderfully curious.</h3>
+          <p>There is a whole world waiting for your questions, your laughter, and your tiny footsteps.</p>
+        </article>
+        <article class="surprise-card reveal-card">
+          <span class="sparkle one">✦</span><span class="sparkle two">✦</span>
+          <div class="surprise-icon">☀️</div>
+          <h3>Keep your light.</h3>
+          <p>Wherever life takes you, may your kindness make every room feel a little warmer.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="section">
       <div class="celebration" aria-labelledby="celebration-title">
         <div>
@@ -371,6 +436,18 @@
       document.getElementById("wishButton").textContent = "Wish sent with love ♥";
       document.getElementById("wishButton").classList.add("revealed");
     });
+
+    const surpriseCards = document.querySelectorAll(".reveal-card");
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry, index) => {
+        if (!entry.isIntersecting) return;
+        entry.target.style.animationDelay = `${index * 120}ms`;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: .18 });
+    surpriseCards.forEach(card => revealObserver.observe(card));
+
     updateCountdown();
     window.setInterval(updateCountdown, 1000);
   </script>
