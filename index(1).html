@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050816" />
+  <meta name="description" content="A first birthday surprise for Ahmed Waseem — born 16 September 2025." />
+  <title>Ahmed Waseem Turns ONE 🎂</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#050816;
+      --bg2:#090d22;
+      --blue:#52c8ff;
+      --blue2:#337dff;
+      --purple:#8a68ff;
+      --gold:#ffd66b;
+      --white:#fff;
+      --muted:rgba(255,255,255,.64);
+      --muted2:rgba(255,255,255,.38);
+      --glass:rgba(255,255,255,.055);
+      --glass2:rgba(255,255,255,.085);
+      --border:rgba(255,255,255,.11);
+      --shadow:0 30px 100px rgba(0,0,0,.35);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      min-height:100vh;
+      overflow-x:hidden;
+      color:var(--white);
+      font-family:"DM Sans",sans-serif;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(55,176,255,.18), transparent 28%),
+        radial-gradient(circle at 90% 24%, rgba(126,88,255,.18), transparent 30%),
+        radial-gradient(circle at 48% 92%, rgba(255,211,92,.08), transparent 34%),
+        linear-gradient(145deg,#040610,#070b1a 48%,#060614);
+    }
+    body::-webkit-scrollbar{width:8px}
+    body::-webkit-scrollbar-track{background:#050713}
+    body::-webkit-scrollbar-thumb{
+      background:linear-gradient(var(--blue),var(--purple));
+      border-radius:99px
+    }
+    button{font:inherit;border:0;cursor:pointer}
+    img{max-width:100%}
+
+    .progress{
+      position:fixed;top:0;left:0;height:3px;width:0;z-index:5000;
+      background:linear-gradient(90deg,var(--blue),var(--purple),var(--gold));
+      box-shadow:0 0 18px rgba(75,190,255,.65)
+    }
+
+    .background{
+      position:fixed;inset:0;z-index:-20;overflow:hidden;pointer-events:none
+    }
+    .orb{
+      position:absolute;width:470px;height:470px;border-radius:50%;
+      filter:blur(115px);opacity:.25;
+      animation:orbMove 16s ease-in-out infinite alternate
+    }
+    .orb.one{left:-170px;top:-170px;background:#29b6ff}
+    .orb.two{right:-190px;top:28%;background:#7654ff;animation-delay:-5s}
+    .orb.three{left:30%;bottom:-240px;background:#ffd35f;animation-delay:-10s}
+    @keyframes orbMove{
+      0%{transform:translate(0,0) scale(1)}
+      50%{transform:translate(95px,75px) scale(1.15)}
+      100%{transform:translate(-40px,100px) scale(.94)}
+    }
+
+    #stars{position:fixed;inset:0;pointer-events:none;z-index:-10}
+    .star{
+      position:absolute;border-radius:50%;background:#fff;
+      box-shadow:0 0 8px rgba(255,255,255,.75);
+      animation:twinkle ease-in-out infinite
+    }
+    @keyframes twinkle{
+      0%,100%{opacity:.15;transform:scale(.6)}
+      50%{opacity:1;transform:scale(1.5)}
+    }
+
+    .opening{
+      position:fixed;inset:0;z-index:4000;
+      display:flex;align-items:center;justify-content:center;padding:20px;
+      background:radial-gradient(circle at center,#151b45,#040610 70%);
+      transition:opacity .8s ease,visibility .8s ease
+    }
+    .opening.hide{opacity:0;visibility:hidden}
+    .opening-card{
+      width:min(620px,100%);text-align:center;padding:52px 34px;
+      border:1px solid var(--border);border-radius:36px;
+      background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));
+      backdrop-filter:blur(28px);box-shadow:0 45px 130px rgba(0,0,0,.52);
+      animation:openingIn 1.05s cubic-bezier(.16,1,.3,1)
+    }
+    @keyframes openingIn{
+      from{opacity:0;transform:scale(.76) translateY(38px);filter:blur(12px)}
+      to{opacity:1;transform:scale(1) translateY(0);filter:blur(0)}
+    }
+    .opening-photo{
+      width:150px;height:150px;margin:0 auto 24px;position:relative;padding:5px;border-radius:50%;
+      background:linear-gradient(135deg,var(--blue),var(--purple),var(--gold));
+      box-shadow:0 20px 55px rgba(58,145,255,.32)
+    }
+    .opening-photo img{
+      width:100%;height:100%;object-fit:cover;object-position:center 22%;
+      border-radius:50%;border:4px solid #111833;display:block
+    }
+    .opening-photo-badge{
+      position:absolute;right:-12px;bottom:6px;
+      padding:7px 12px;border-radius:999px;background:var(--gold);color:#161616;
+      font-size:10px;font-weight:900;letter-spacing:1.5px;box-shadow:0 8px 22px rgba(0,0,0,.3)
+    }
+    .opening small,.eyebrow,.section-head small{
+      color:var(--gold);font-size:11px;font-weight:800;letter-spacing:4px;text-transform:uppercase
+    }
+    .opening h1{font-size:clamp(38px,8vw,61px);margin-top:14px}
+    .opening p{max-width:480px;margin:18px auto 28px;color:var(--muted);line-height:1.8}
+
+    .btn{
+      position:relative;overflow:hidden;padding:17px 30px;border-radius:999px;color:white;font-weight:800;
+      background:linear-gradient(135deg,#239eff,#7560ff,#ae59ff);
+      background-size:200% 200%;
+      box-shadow:0 20px 55px rgba(65,105,255,.30);
+      transition:transform .3s ease,box-shadow .3s ease;
+      animation:btnGradient 4s ease infinite
+    }
+    .btn::before{
+      content:"";position:absolute;width:40%;height:200%;top:-50%;left:-70%;transform:rotate(25deg);
+      background:linear-gradient(to right,transparent,rgba(255,255,255,.72),transparent);transition:.8s
+    }
+    .btn:hover::before{left:140%}
+    .btn:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 25px 68px rgba(65,105,255,.42)}
+    @keyframes btnGradient{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+
+    .glass-btn{
+      padding:16px 27px;border-radius:999px;border:1px solid var(--border);
+      background:rgba(255,255,255,.055);color:white;font-weight:700;backdrop-filter:blur(18px);
+      transition:.3s
+    }
+    .glass-btn:hover{transform:translateY(-4px);background:rgba(255,255,255,.09)}
+
+    .hero{
+      min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;
+      padding:92px 20px 76px;overflow:hidden
+    }
+    .hero-content{width:min(1050px,100%);text-align:center;position:relative;z-index:5}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border-radius:999px;
+      border:1px solid var(--border);background:rgba(255,255,255,.05);backdrop-filter:blur(18px);
+      color:rgba(255,255,255,.75);animation:fadeDown 1s ease both
+    }
+    .hero-title{
+      margin-top:34px;font-family:"Great Vibes",cursive;font-size:clamp(76px,13vw,160px);
+      font-weight:400;line-height:.9;
+      background:linear-gradient(90deg,#fff,#c6ecff,#61c9ff,#bcaeff,#ffe59f,#fff);
+      background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;
+      filter:drop-shadow(0 12px 45px rgba(65,170,255,.2));
+      animation:titleIn 1.3s cubic-bezier(.16,1,.3,1) both,textFlow 7s linear infinite
+    }
+    .name{
+      margin-top:20px;font-family:"Montserrat",sans-serif;font-size:clamp(44px,7vw,80px);
+      font-weight:900;letter-spacing:-2px;
+      background:linear-gradient(90deg,var(--blue),#fff,#a995ff);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      animation:fadeUp 1s .45s both
+    }
+    .turns-one{margin-top:10px;font-size:clamp(22px,4vw,39px);font-weight:800;color:var(--gold);animation:fadeUp 1s .6s both}
+    .typing{
+      max-width:760px;min-height:92px;margin:28px auto 0;color:var(--muted);font-size:clamp(16px,2vw,20px);
+      line-height:1.9;animation:fadeUp 1s .8s both
+    }
+    .cursor{display:inline-block;width:2px;height:18px;background:var(--blue);margin-left:4px;animation:blink .7s infinite}
+    .hero-actions{margin-top:31px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;animation:fadeUp 1s 1s both}
+
+    @keyframes titleIn{
+      from{opacity:0;transform:translateY(42px) scale(.76);filter:blur(18px)}
+      to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+    }
+    @keyframes textFlow{to{background-position:300% center}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeDown{from{opacity:0;transform:translateY(-24px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes blink{50%{opacity:0}}
+
+    .float-object{
+      position:absolute;z-index:2;pointer-events:none;filter:drop-shadow(0 14px 22px rgba(0,0,0,.4));
+      animation:floatObject 6s ease-in-out infinite
+    }
+    .f1{left:6%;top:20%;font-size:65px}
+    .f2{right:7%;top:23%;font-size:60px;animation-delay:-2s}
+    .f3{left:12%;bottom:17%;font-size:48px;animation-delay:-4s}
+    .f4{right:12%;bottom:18%;font-size:52px;animation-delay:-1s}
+    @keyframes floatObject{
+      0%,100%{transform:translateY(0) rotate(-5deg)}
+      50%{transform:translateY(-28px) rotate(6deg)}
+    }
+
+    .countdown-wrap{
+      max-width:840px;margin:54px auto 0;padding:20px;border-radius:28px;
+      border:1px solid var(--border);background:rgba(255,255,255,.045);backdrop-filter:blur(20px);
+      animation:fadeUp 1s 1.15s both
+    }
+    .countdown-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted2);font-weight:800}
+    .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:15px}
+    .time-box{padding:16px 10px;border-radius:19px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.07)}
+    .time-box strong{display:block;font-size:clamp(24px,5vw,38px);color:var(--gold)}
+    .time-box span{display:block;margin-top:3px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1.5px}
+
+    .section{position:relative;padding:120px 20px}
+    .container{width:min(1120px,100%);margin:auto}
+    .section-head{max-width:760px;margin:0 auto 56px;text-align:center}
+    .section-head h2{margin-top:14px;font-family:"Montserrat",sans-serif;font-size:clamp(35px,5vw,60px);line-height:1.12}
+    .section-head p{margin-top:18px;color:var(--muted);line-height:1.8}
+
+    .message{
+      position:relative;overflow:hidden;padding:clamp(38px,7vw,78px);border-radius:38px;border:1px solid var(--border);
+      background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.024));
+      backdrop-filter:blur(28px);box-shadow:var(--shadow)
+    }
+    .message::before{
+      content:"";position:absolute;width:300px;height:300px;right:-130px;top:-145px;border-radius:50%;
+      background:rgba(65,178,255,.15);filter:blur(28px)
+    }
+    .message-text{
+      position:relative;z-index:2;text-align:center;font-family:"Playfair Display",serif;
+      font-size:clamp(18px,2.4vw,24px);line-height:2;color:rgba(255,255,255,.76)
+    }
+    .message-text strong{color:#fff}
+
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .stat{
+      padding:36px 20px;text-align:center;border:1px solid var(--border);border-radius:27px;background:var(--glass);
+      backdrop-filter:blur(18px);transition:.3s
+    }
+    .stat:hover{transform:translateY(-8px);background:var(--glass2)}
+    .stat .icon{font-size:39px}
+    .stat h3{margin-top:17px;font-size:30px;color:var(--blue)}
+    .stat p{margin-top:7px;color:var(--muted);font-size:13px;line-height:1.6}
+
+    /* PHOTO GALLERY */
+    .photo-gallery{
+      display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:340px 300px;
+      gap:18px;max-width:1100px;margin:auto
+    }
+    .photo-card{
+      position:relative;overflow:hidden;border-radius:30px;border:1px solid var(--border);
+      background:var(--glass);box-shadow:0 28px 80px rgba(0,0,0,.28);isolation:isolate;cursor:pointer;
+      transition:transform .45s cubic-bezier(.16,1,.3,1),border-color .4s ease,box-shadow .4s ease
+    }
+    .photo-card:first-child{grid-row:1/3}
+    .photo-card:nth-child(4){grid-column:2/4}
+    .photo-card:hover{transform:translateY(-8px) scale(1.015);border-color:rgba(84,199,255,.35);box-shadow:0 40px 100px rgba(0,0,0,.4)}
+    .photo-card img{
+      width:100%;height:100%;display:block;object-fit:cover;
+      transition:transform .8s cubic-bezier(.16,1,.3,1),filter .5s ease
+    }
+    .photo-card:hover img{transform:scale(1.065);filter:brightness(1.05)}
+    .photo-card.photo-1 img{object-position:center 34%}
+    .photo-card.photo-2 img{object-position:center 30%}
+    .photo-card.photo-3 img{object-position:center 28%}
+    .photo-card.photo-4 img{object-position:center 28%}
+    .photo-card::after{
+      content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+      background:linear-gradient(to top,rgba(3,7,17,.92) 0%,rgba(3,7,17,.43) 33%,rgba(3,7,17,.04) 68%,transparent 100%)
+    }
+    .photo-info{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:28px}
+    .photo-pill{
+      display:inline-flex;align-items:center;gap:7px;padding:7px 12px;margin-bottom:11px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);background:rgba(5,10,24,.48);backdrop-filter:blur(12px);
+      color:#d9f2ff;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase
+    }
+    .photo-info h3{font-size:clamp(19px,2vw,25px)}
+    .photo-info p{max-width:430px;margin-top:7px;color:rgba(255,255,255,.72);font-size:13px;line-height:1.6}
+    .photo-heart{
+      position:absolute;top:18px;right:18px;z-index:4;width:42px;height:42px;border-radius:50%;
+      display:grid;place-items:center;border:1px solid rgba(255,255,255,.15);background:rgba(5,10,20,.38);
+      backdrop-filter:blur(10px)
+    }
+    .gallery-quote{
+      max-width:780px;margin:34px auto 0;text-align:center;color:rgba(255,255,255,.48);
+      font-family:"Playfair Display",serif;font-style:italic;font-size:16px;line-height:1.8
+    }
+
+    .story-grid,.wish-grid,.secret-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .story-card,.wish-card{
+      position:relative;overflow:hidden;min-height:290px;padding:33px;border:1px solid var(--border);border-radius:29px;
+      background:linear-gradient(145deg,rgba(255,255,255,.072),rgba(255,255,255,.02));transition:.35s
+    }
+    .story-card:hover,.wish-card:hover{transform:translateY(-8px);border-color:rgba(94,201,255,.3)}
+    .story-card .emoji,.wish-card .emoji{font-size:47px;display:inline-block;animation:floatObject 4s ease-in-out infinite}
+    .story-card h3,.wish-card h3{margin-top:25px;font-size:22px}
+    .story-card p,.wish-card p{margin-top:13px;color:var(--muted);font-size:14px;line-height:1.8}
+    .story-card strong{position:absolute;right:20px;bottom:10px;font-size:54px;color:rgba(255,255,255,.05)}
+    .wish-grid{grid-template-columns:repeat(2,1fr)}
+    .wish-card{min-height:auto}
+
+    .secret-card{height:275px;perspective:1000px;cursor:pointer}
+    .secret-inner{position:relative;width:100%;height:100%;transition:transform .8s cubic-bezier(.16,1,.3,1);transform-style:preserve-3d}
+    .secret-card.open .secret-inner{transform:rotateY(180deg)}
+    .secret-front,.secret-back{
+      position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;
+      border:1px solid var(--border);border-radius:28px;backface-visibility:hidden;text-align:center;
+      background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025))
+    }
+    .secret-front span{font-size:58px}
+    .secret-front h3{margin-top:18px}
+    .secret-front p{margin-top:8px;color:var(--muted);font-size:13px}
+    .secret-back{
+      transform:rotateY(180deg);
+      background:linear-gradient(145deg,rgba(55,168,255,.15),rgba(116,85,255,.12))
+    }
+    .secret-back span{font-size:40px}
+    .secret-back p{margin-top:14px;color:rgba(255,255,255,.78);line-height:1.8}
+
+    .quote-section{
+      min-height:520px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden
+    }
+    .quote-box{max-width:850px;padding:40px;position:relative;z-index:2}
+    .quote-mark{font-family:"Playfair Display";font-size:100px;color:rgba(255,255,255,.09);line-height:.45}
+    .quote-box h2{
+      font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:clamp(27px,5vw,50px);line-height:1.5;
+      background:linear-gradient(90deg,#fff,#ccefff,#fff);-webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .quote-box p{margin-top:24px;color:var(--gold);font-size:11px;letter-spacing:4px;text-transform:uppercase;font-weight:800}
+
+    .cake-stage{min-height:350px;display:flex;align-items:flex-end;justify-content:center}
+    .cake{position:relative;width:290px;animation:cakeFloat 4s ease-in-out infinite;filter:drop-shadow(0 35px 30px rgba(0,0,0,.4))}
+    @keyframes cakeFloat{50%{transform:translateY(-8px)}}
+    .layer{
+      position:relative;margin:auto;border-radius:18px 18px 12px 12px;
+      background:linear-gradient(90deg,#55bdff,#cbeeff,#55bdff);
+      box-shadow:inset 0 -10px 24px rgba(20,80,130,.18)
+    }
+    .layer.bottom{width:290px;height:90px}
+    .layer.middle{width:225px;height:75px;margin-bottom:-4px}
+    .layer.top{width:160px;height:65px;margin-bottom:-4px}
+    .icing{position:absolute;left:0;right:0;top:0;height:22px;border-radius:18px 18px 50% 50%;background:#fff}
+    .number-one{
+      position:absolute;left:50%;bottom:222px;transform:translateX(-50%);
+      font-size:70px;font-weight:900;color:var(--gold);text-shadow:0 0 22px rgba(255,210,90,.45)
+    }
+    .candle{
+      position:absolute;left:50%;bottom:278px;transform:translateX(-50%);width:12px;height:44px;border-radius:7px;
+      background:repeating-linear-gradient(45deg,#8567ff 0,#8567ff 6px,#fff 6px,#fff 11px);z-index:5
+    }
+    .flame{
+      position:absolute;width:20px;height:30px;top:-32px;left:-4px;border-radius:60% 45% 60% 45%;transform:rotate(45deg);
+      background:radial-gradient(circle at 60% 65%,#fff 0 10%,#ffe764 25%,#ff9200 70%);
+      box-shadow:0 0 18px rgba(255,200,50,.9),0 0 35px rgba(255,140,40,.5);
+      animation:flame .25s ease-in-out infinite alternate
+    }
+    @keyframes flame{from{transform:rotate(42deg) scale(.95)}to{transform:rotate(49deg) scale(1.08)}}
+    .flame.off{display:none}
+    .cake-controls{text-align:center;margin-top:30px}
+    .cake-controls p{margin-top:17px;color:var(--muted)}
+
+    .gift{width:180px;height:195px;position:relative;margin:45px auto;cursor:pointer}
+    .gift-box{
+      position:absolute;width:160px;height:125px;left:10px;bottom:0;border-radius:10px;
+      background:linear-gradient(135deg,#238cff,#6458ec);box-shadow:0 30px 60px rgba(30,80,180,.4)
+    }
+    .gift-box::before{content:"";position:absolute;width:30px;top:0;bottom:0;left:calc(50% - 15px);background:var(--gold)}
+    .gift-lid{
+      position:absolute;width:180px;height:40px;left:0;top:35px;z-index:4;border-radius:9px;
+      background:linear-gradient(135deg,#4babff,#7967ff);transition:.8s cubic-bezier(.16,1,.3,1)
+    }
+    .gift-lid::before{content:"";position:absolute;width:30px;top:0;bottom:0;left:calc(50% - 15px);background:#ffe58b}
+    .bow{position:absolute;width:80px;height:50px;left:50px;top:-7px;z-index:5}
+    .bow::before,.bow::after{content:"";position:absolute;width:40px;height:28px;border:10px solid var(--gold);border-radius:50%}
+    .bow::before{left:-4px;transform:rotate(25deg)}
+    .bow::after{right:-4px;transform:rotate(-25deg)}
+    .gift:hover{animation:shake .5s ease}
+    .gift.open .gift-lid{transform:translateY(-110px) rotate(-17deg)}
+    @keyframes shake{25%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}75%{transform:rotate(-3deg)}}
+
+    .letter{
+      max-width:880px;margin:auto;padding:clamp(40px,7vw,76px);border-radius:31px;position:relative;
+      background:linear-gradient(145deg,#fffdf7,#f2f8ff);color:#243044;box-shadow:0 40px 120px rgba(0,0,0,.35)
+    }
+    .letter::before{content:"💙";position:absolute;right:34px;top:-31px;font-size:65px;transform:rotate(8deg)}
+    .letter h2{font-family:"Great Vibes",cursive;font-size:clamp(45px,7vw,72px);font-weight:400;color:#347fc6}
+    .letter p{margin-top:19px;font-family:"Playfair Display",serif;font-size:18px;line-height:2;color:#42536a}
+    .signature{margin-top:30px;text-align:right;font-family:"Great Vibes",cursive;font-size:37px;color:#347fc6}
+
+    .modal{
+      position:fixed;inset:0;z-index:4500;display:flex;align-items:center;justify-content:center;padding:20px;
+      background:rgba(2,4,12,.84);backdrop-filter:blur(18px);opacity:0;visibility:hidden;transition:.4s
+    }
+    .modal.show{opacity:1;visibility:visible}
+    .modal-card{
+      width:min(560px,100%);padding:50px 35px;text-align:center;border-radius:32px;border:1px solid var(--border);
+      background:linear-gradient(145deg,#172644,#0a0b19);box-shadow:0 50px 140px rgba(0,0,0,.62);
+      transform:scale(.7) translateY(30px);transition:.6s cubic-bezier(.34,1.56,.64,1)
+    }
+    .modal.show .modal-card{transform:scale(1) translateY(0)}
+    .modal-card .emoji{font-size:75px;animation:floatObject 2s ease-in-out infinite}
+    .modal-card h3{margin-top:16px;font-size:38px}
+    .modal-card p{margin:17px 0 28px;line-height:1.9;color:var(--muted)}
+
+    #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:4900}
+    .floating{
+      position:fixed;bottom:-50px;pointer-events:none;z-index:2;animation:rise linear forwards
+    }
+    @keyframes rise{
+      0%{opacity:0;transform:translateY(0) rotate(0)}
+      15%{opacity:.8}
+      100%{opacity:0;transform:translateY(-115vh) rotate(360deg)}
+    }
+
+    .reveal{opacity:0;transform:translateY(50px);transition:opacity .9s ease,transform .9s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    footer{
+      padding:55px 20px 38px;text-align:center;color:rgba(255,255,255,.36);font-size:12px;letter-spacing:1px
+    }
+    footer span{color:var(--blue)}
+
+    @media(max-width:900px){
+      .stats,.story-grid,.secret-grid{grid-template-columns:repeat(2,1fr)}
+      .wish-grid{grid-template-columns:1fr 1fr}
+      .photo-gallery{grid-template-columns:repeat(2,1fr);grid-template-rows:420px 320px 320px}
+      .photo-card:first-child{grid-row:auto;grid-column:1/3}
+      .photo-card:nth-child(4){grid-column:1/3}
+    }
+    @media(max-width:700px){
+      .hero{padding-top:80px}
+      .float-object{opacity:.36}
+      .hero-actions{flex-direction:column;align-items:center}
+      .btn,.glass-btn{width:min(315px,100%)}
+      .countdown{grid-template-columns:repeat(2,1fr)}
+      .section{padding:84px 16px}
+      .stats,.story-grid,.secret-grid,.wish-grid{grid-template-columns:1fr}
+      .photo-gallery{display:flex;flex-direction:column;gap:16px}
+      .photo-card,.photo-card:first-child,.photo-card:nth-child(4){width:100%;height:480px;grid-row:auto;grid-column:auto}
+      .cake{transform:scale(.84)}
+    }
+    @media(max-width:460px){
+      .opening-card{padding:40px 20px}
+      .opening-photo{width:132px;height:132px}
+      .photo-card,.photo-card:first-child,.photo-card:nth-child(4){height:430px}
+      .photo-info{padding:22px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="progress" id="progress"></div>
+
+  <div class="background">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+  </div>
+
+  <div id="stars"></div>
+  <canvas id="confetti"></canvas>
+
+  <!-- OPENING -->
+  <div class="opening" id="opening">
+    <div class="opening-card">
+
+      <div class="opening-photo">
+        <img src="images/4.jpeg" alt="Ahmed Waseem">
+        <div class="opening-photo-badge">ONE ✨</div>
+      </div>
+
+      <small>A little surprise is waiting</small>
+
+      <h1>For Ahmed Waseem</h1>
+
+      <p>
+        365 days of tiny smiles, little adventures, growing curiosity and beautiful memories
+        have brought us to one very special day.
+      </p>
+
+      <button class="btn" id="openBtn">💙 Open Ahmed's Surprise</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="float-object f1">🎈</div>
+    <div class="float-object f2">⭐</div>
+    <div class="float-object f3">🧸</div>
+    <div class="float-object f4">🎂</div>
+
+    <div class="hero-content">
+
+      <div class="eyebrow">✦ 16 September 2026 ✦</div>
+
+      <h1 class="hero-title">Happy Birthday</h1>
+
+      <div class="name">Ahmed Waseem</div>
+
+      <div class="turns-one">✨ Ahmed Turns ONE ✨</div>
+
+      <div class="typing">
+        <span id="typingText"></span><span class="cursor"></span>
+      </div>
+
+      <div class="hero-actions">
+        <button class="btn" id="celebrateBtn">🎉 Celebrate Ahmed</button>
+
+        <button
+          class="glass-btn"
+          onclick="document.getElementById('memories').scrollIntoView()"
+        >
+          📸 See His Memories
+        </button>
+      </div>
+
+      <div class="countdown-wrap" id="countdownWrap">
+        <div class="countdown-title" id="countdownTitle">Countdown to Ahmed's 1st Birthday</div>
+
+        <div class="countdown">
+          <div class="time-box"><strong id="days">00</strong><span>Days</span></div>
+          <div class="time-box"><strong id="hours">00</strong><span>Hours</span></div>
+          <div class="time-box"><strong id="minutes">00</strong><span>Minutes</span></div>
+          <div class="time-box"><strong id="seconds">00</strong><span>Seconds</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGE -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <small>Our little star</small>
+        <h2>One Whole Year of Ahmed 💙</h2>
+        <p>
+          From the very first day to his very first birthday, every tiny moment
+          has become part of a beautiful story.
+        </p>
+      </div>
+
+      <div class="message reveal">
+        <div class="message-text">
+          On <strong>16 September 2025</strong>, a beautiful little boy named
+          <strong>Ahmed Waseem</strong> entered the world.
+
+          <br><br>
+
+          Since then came sleepy cuddles, curious eyes, tiny hands, adorable expressions,
+          little giggles and countless moments worth remembering.
+
+          <br><br>
+
+          And somehow, in what feels like the blink of an eye, that tiny baby has reached
+          his <strong>very first birthday.</strong>
+
+          <br><br>
+
+          Today is not only about cake, balloons or presents. It is about celebrating
+          <strong>Ahmed's first beautiful year of life.</strong> 🎂💙
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <small>His first chapter</small>
+        <h2>365 Days of Little Wonders ✨</h2>
+      </div>
+
+      <div class="stats">
+        <div class="stat reveal">
+          <div class="icon">☀️</div>
+          <h3>365</h3>
+          <p>Beautiful days of Ahmed</p>
+        </div>
+
+        <div class="stat reveal">
+          <div class="icon">🌙</div>
+          <h3>12</h3>
+          <p>Months of growing and discovering</p>
+        </div>
+
+        <div class="stat reveal">
+          <div class="icon">🎂</div>
+          <h3>1</h3>
+          <p>Very special birthday</p>
+        </div>
+
+        <div class="stat reveal">
+          <div class="icon">💙</div>
+          <h3>∞</h3>
+          <p>Love surrounding him</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHOTO MEMORIES -->
+  <section class="section" id="memories">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <small>A year captured in little moments</small>
+        <h2>Ahmed's First Year in Pictures 📸</h2>
+        <p>
+          Four little moments from a year filled with curiosity, smiles,
+          tiny adventures and memories that will stay forever.
+        </p>
+      </div>
+
+      <div class="photo-gallery">
+
+        <article class="photo-card photo-1 reveal">
+          <img src="images/1.jpeg" alt="Ahmed Waseem wearing a striped shirt">
+          <div class="photo-heart">💙</div>
+          <div class="photo-info">
+            <div class="photo-pill">✦ Memory 01</div>
+            <h3>Our Curious Little Explorer</h3>
+            <p>
+              Those wide curious eyes, always looking around and discovering something new.
+            </p>
+          </div>
+        </article>
+
+        <article class="photo-card photo-2 reveal">
+          <img src="images/2.jpeg" alt="Ahmed Waseem in a traditional beige outfit">
+          <div class="photo-heart">✨</div>
+          <div class="photo-info">
+            <div class="photo-pill">✦ Memory 02</div>
+            <h3>Little Gentleman</h3>
+            <p>
+              Tiny, handsome and already carrying so much personality.
+            </p>
+          </div>
+        </article>
+
+        <article class="photo-card photo-3 reveal">
+          <img src="images/3.jpeg" alt="Ahmed Waseem wearing a green outfit">
+          <div class="photo-heart">🌟</div>
+          <div class="photo-info">
+            <div class="photo-pill">✦ Memory 03</div>
+            <h3>Growing So Fast</h3>
+            <p>
+              Every month brought a new expression, a new skill and a little more of Ahmed's personality.
+            </p>
+          </div>
+        </article>
+
+        <article class="photo-card photo-4 reveal">
+          <img src="images/4.jpeg" alt="Close portrait of Ahmed Waseem">
+          <div class="photo-heart">👑</div>
+          <div class="photo-info">
+            <div class="photo-pill">✦ Memory 04</div>
+            <h3>Those Beautiful Eyes</h3>
+            <p>
+              One little face, a thousand expressions and countless reasons to smile.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="gallery-quote reveal">
+        “One day Ahmed will look back at these photographs and see just how small he once was —
+        but everyone around him will remember just how much happiness he already brought into their lives.” 💙
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <small>Once upon a time</small>
+        <h2>Ahmed's First Little Story 📖</h2>
+      </div>
+
+      <div class="story-grid">
+
+        <div class="story-card reveal">
+          <div class="emoji">👶</div>
+          <h3>The Beginning</h3>
+          <p>
+            On 16 September 2025, Ahmed's story began — tiny hands, tiny feet
+            and a whole new world waiting to be discovered.
+          </p>
+          <strong>01</strong>
+        </div>
+
+        <div class="story-card reveal">
+          <div class="emoji">😊</div>
+          <h3>The First Smiles</h3>
+          <p>
+            Then came those little smiles — the kind that could suddenly make
+            an ordinary day feel completely perfect.
+          </p>
+          <strong>02</strong>
+        </div>
+
+        <div class="story-card reveal">
+          <div class="emoji">🧸</div>
+          <h3>Little Adventures</h3>
+          <p>
+            Every toy, sound, face and corner of the room became something new
+            to explore with wide curious eyes.
+          </p>
+          <strong>03</strong>
+        </div>
+
+        <div class="story-card reveal">
+          <div class="emoji">😂</div>
+          <h3>The Giggles</h3>
+          <p>
+            One tiny laugh became a sound everyone wanted to hear again and again.
+          </p>
+          <strong>04</strong>
+        </div>
+
+        <div class="story-card reveal">
+          <div class="emoji">🌱</div>
+          <h3>Growing Every Day</h3>
+          <p>
+            Day by day Ahmed became stronger, more curious and more full of personality.
+          </p>
+          <strong>05</strong>
+        </div>
+
+        <div class="story-card reveal">
+          <div class="emoji">👑</div>
+          <h3>And Now He's ONE</h3>
+          <p>
+            The tiny newborn has reached his first big milestone. Today our little champion turns one.
+          </p>
+          <strong>06</strong>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WISHES -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <small>For his beautiful future</small>
+        <h2>Wishes for Ahmed 🌟</h2>
+      </div>
+
+      <div class="wish-grid">
+
+        <div class="wish-card reveal">
+          <div class="emoji">💙</div>
+          <h3>A Kind Heart</h3>
+          <p>
+            May Ahmed grow with a kind, generous and loving heart and always treat people with compassion.
+          </p>
+        </div>
+
+        <div class="wish-card reveal">
+          <div class="emoji">🦁</div>
+          <h3>Courage</h3>
+          <p>
+            May he grow brave enough to follow his dreams, face challenges and always believe in himself.
+          </p>
+        </div>
+
+        <div class="wish-card reveal">
+          <div class="emoji">📚</div>
+          <h3>Wisdom</h3>
+          <p>
+            May his curiosity never disappear, and may every year bring him new knowledge and discovery.
+          </p>
+        </div>
+
+        <div class="wish-card reveal">
+          <div class="emoji">🌍</div>
+          <h3>Adventures</h3>
+          <p>
+            May Ahmed explore beautiful places, meet wonderful people and create unforgettable memories.
+          </p>
+        </div>
+
+        <div class="wish-card reveal">
+          <div class="emoji">⭐</div>
+          <h3>Big Dreams</h3>
+          <p>
+            May his dreams always remain bigger than his fears and may he believe possibilities are endless.
+          </p>
+        </div>
+
+        <div class="wish-card reveal">
+          <div class="emoji">😊</div>
+          <h3>Happiness</h3>
+          <p>
+            Above everything else, may Ahmed live a life filled with peace, laughter, love and happiness.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section">
+    <div class="quote-box reveal">
+      <div class="quote-mark">“</div>
+      <h2>
+        Some of the smallest people take up the biggest space in our hearts.
+      </h2>
+      <p>Ahmed Waseem • First Birthday</p>
+    </div>
+  </section>
+
+  <!-- SECRET CARDS -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <small>Tap each card</small>
+        <h2>Little Messages for Ahmed 💌</h2>
+        <p>Three tiny surprises are waiting inside.</p>
+      </div>
+
+      <div class="secret-grid">
+
+        <div class="secret-card reveal">
+          <div class="secret-inner">
+            <div class="secret-front">
+              <span>⭐</span>
+              <h3>Open Me</h3>
+              <p>Tap to reveal a wish</p>
+            </div>
+            <div class="secret-back">
+              <span>💙</span>
+              <p>Ahmed, may you always know how deeply loved and special you are.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="secret-card reveal">
+          <div class="secret-inner">
+            <div class="secret-front">
+              <span>🚀</span>
+              <h3>Future Message</h3>
+              <p>Tap to discover it</p>
+            </div>
+            <div class="secret-back">
+              <span>🌍</span>
+              <p>There is an enormous world waiting for you. Explore it fearlessly, little champion.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="secret-card reveal">
+          <div class="secret-inner">
+            <div class="secret-front">
+              <span>🎁</span>
+              <h3>One More</h3>
+              <p>Something important inside</p>
+            </div>
+            <div class="secret-back">
+              <span>👑</span>
+              <p>You were loved long before you could even understand what love meant.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CAKE -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <small>The big moment</small>
+        <h2>Ahmed's First Birthday Cake 🎂</h2>
+        <p>Make one beautiful wish for the little birthday boy.</p>
+      </div>
+
+      <div class="cake-stage reveal">
+        <div class="cake">
+          <div class="number-one">1</div>
+
+          <div class="candle">
+            <div class="flame" id="flame"></div>
+          </div>
+
+          <div class="layer top"><div class="icing"></div></div>
+          <div class="layer middle"><div class="icing"></div></div>
+          <div class="layer bottom"><div class="icing"></div></div>
+        </div>
+      </div>
+
+      <div class="cake-controls">
+        <button class="btn" id="blowBtn">🕯️ Blow Ahmed's Candle</button>
+        <p id="cakeMessage">Close your eyes and make a beautiful wish for Ahmed.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GIFT -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <small>Birthday present</small>
+        <h2>One More Surprise for Ahmed 🎁</h2>
+        <p>Tap the present to open it.</p>
+      </div>
+
+      <div class="gift reveal" id="gift">
+        <div class="gift-lid"></div>
+        <div class="bow"></div>
+        <div class="gift-box"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LETTER -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <small>Something to keep forever</small>
+        <h2>A Letter for Future Ahmed 💙</h2>
+      </div>
+
+      <div class="letter reveal">
+        <h2>Dear Ahmed,</h2>
+
+        <p>
+          Today, 16 September 2026, you are only one year old.
+
+          <br><br>
+
+          You probably will not remember this day yourself. You will not remember
+          the decorations, the birthday cake or everyone smiling while looking at you.
+
+          <br><br>
+
+          But the people who love you will remember.
+
+          <br><br>
+
+          They will remember how small your hands were, how innocent your smile looked,
+          how curious your eyes were and how much happiness one little boy could bring into a room.
+
+          <br><br>
+
+          One day you will be older. You will have your own dreams, your own adventures,
+          your own challenges and your own story.
+
+          <br><br>
+
+          When that day comes, we hope you grow into someone who is kind without being weak,
+          confident without being arrogant, brave without forgetting compassion,
+          and successful without forgetting the people who stood beside you.
+
+          <br><br>
+
+          Explore. Learn. Laugh loudly. Make mistakes. Try again. Dream bigger.
+
+          <br><br>
+
+          And wherever life takes you, always remember that your story began surrounded by love.
+
+          <br><br>
+
+          Today you turn only <strong>ONE</strong> — but this is only the beginning.
+
+          <br><br>
+
+          Happy First Birthday, little champion. 🎂💙✨
+        </p>
+
+        <div class="signature">With lots of love</div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    Celebrating <span>Ahmed Waseem</span> • Born 16 September 2025 💙
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <div class="emoji">👑</div>
+      <h3>Happy 1st Birthday Ahmed!</h3>
+      <p>
+        May Allah bless Ahmed Waseem with a long, healthy and beautiful life,
+        protect him always, guide him toward goodness, and fill his future
+        with happiness, knowledge and success.
+        <br><br>
+        Ameen. 💙
+      </p>
+      <button class="btn" id="closeModal">🎉 Celebrate Ahmed</button>
+    </div>
+  </div>
+
+  <script>
+    const heroMessage =
+      "From tiny hands and sleepy cuddles to curious eyes and joyful little smiles — 365 beautiful days have passed, and today Ahmed Waseem celebrates his very first birthday.";
+
+    // Opening
+    const opening = document.getElementById("opening");
+    document.getElementById("openBtn").addEventListener("click", () => {
+      opening.classList.add("hide");
+      createConfetti(320);
+      burst();
+    });
+
+    // Typing
+    const typingText = document.getElementById("typingText");
+    let typeIndex = 0;
+
+    function typeHeroText(){
+      if(typeIndex < heroMessage.length){
+        typingText.textContent += heroMessage.charAt(typeIndex);
+        typeIndex++;
+        setTimeout(typeHeroText, 27);
+      }
+    }
+
+    setTimeout(typeHeroText, 1000);
+
+    // Stars
+    const stars = document.getElementById("stars");
+
+    for(let i = 0; i < 125; i++){
+      const star = document.createElement("div");
+      star.className = "star";
+
+      const size = Math.random() * 2.4 + 1;
+
+      star.style.width = size + "px";
+      star.style.height = size + "px";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.animationDuration = (Math.random() * 3 + 1.5) + "s";
+      star.style.animationDelay = (Math.random() * 4) + "s";
+
+      stars.appendChild(star);
+    }
+
+    // Scroll progress
+    const progress = document.getElementById("progress");
+
+    window.addEventListener("scroll", () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      const value = max > 0 ? (scrollY / max) * 100 : 0;
+      progress.style.width = value + "%";
+    });
+
+    // Reveal
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {threshold:.12});
+
+    document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+    // Countdown
+    const birthdayDate = new Date(2026, 8, 16, 0, 0, 0);
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+    const countdownTitle = document.getElementById("countdownTitle");
+
+    function updateCountdown(){
+      const now = new Date();
+      let difference = birthdayDate - now;
+
+      if(difference <= 0){
+        daysEl.textContent = "01";
+        hoursEl.textContent = "YEAR";
+        minutesEl.textContent = "OLD";
+        secondsEl.textContent = "🎂";
+        countdownTitle.textContent = "Ahmed Waseem is officially ONE! 🎉";
+        return;
+      }
+
+      const days = Math.floor(difference / 86400000);
+      difference %= 86400000;
+
+      const hours = Math.floor(difference / 3600000);
+      difference %= 3600000;
+
+      const minutes = Math.floor(difference / 60000);
+      difference %= 60000;
+
+      const seconds = Math.floor(difference / 1000);
+
+      daysEl.textContent = String(days).padStart(2,"0");
+      hoursEl.textContent = String(hours).padStart(2,"0");
+      minutesEl.textContent = String(minutes).padStart(2,"0");
+      secondsEl.textContent = String(seconds).padStart(2,"0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Flip cards
+    document.querySelectorAll(".secret-card").forEach(card => {
+      card.addEventListener("click", () => {
+        card.classList.toggle("open");
+      });
+    });
+
+    // Confetti
+    const canvas = document.getElementById("confetti");
+    const ctx = canvas.getContext("2d");
+    const confettiColors = ["#55c8ff","#347eff","#8d6bff","#ffd66b","#ffffff","#69f0d0"];
+    let particles = [];
+    let confettiFrame = null;
+
+    function resizeCanvas(){
+      canvas.width = innerWidth * devicePixelRatio;
+      canvas.height = innerHeight * devicePixelRatio;
+      canvas.style.width = innerWidth + "px";
+      canvas.style.height = innerHeight + "px";
+
+      ctx.setTransform(
+        devicePixelRatio,0,0,devicePixelRatio,0,0
+      );
+    }
+
+    resizeCanvas();
+    addEventListener("resize", resizeCanvas);
+
+    function createConfetti(amount = 220){
+      for(let i = 0; i < amount; i++){
+        particles.push({
+          x: Math.random() * innerWidth,
+          y: -30 - Math.random() * 320,
+          size: Math.random() * 8 + 4,
+          color: confettiColors[Math.floor(Math.random() * confettiColors.length)],
+          vx: Math.random() * 6 - 3,
+          vy: Math.random() * 5 + 2,
+          gravity: Math.random() * .045 + .025,
+          rotation: Math.random() * Math.PI * 2,
+          rotationSpeed: Math.random() * .15 - .075
+        });
+      }
+
+      if(!confettiFrame){
+        animateConfetti();
+      }
+    }
+
+    function animateConfetti(){
+      ctx.clearRect(0,0,innerWidth,innerHeight);
+
+      for(let i = particles.length - 1; i >= 0; i--){
+        const p = particles[i];
+
+        p.vy += p.gravity;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rotation += p.rotationSpeed;
+
+        ctx.save();
+        ctx.translate(p.x,p.y);
+        ctx.rotate(p.rotation);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size/2,-p.size/3,p.size,p.size*.7);
+        ctx.restore();
+
+        if(p.y > innerHeight + 60){
+          particles.splice(i,1);
+        }
+      }
+
+      if(particles.length){
+        confettiFrame = requestAnimationFrame(animateConfetti);
+      }else{
+        confettiFrame = null;
+      }
+    }
+
+    // Floating particles
+    function createFloating(){
+      const item = document.createElement("div");
+      item.className = "floating";
+
+      const icons = ["💙","⭐","✨","🎈","🧸","🌟"];
+      item.textContent = icons[Math.floor(Math.random() * icons.length)];
+
+      item.style.left = Math.random() * 100 + "vw";
+      item.style.fontSize = (Math.random() * 17 + 13) + "px";
+      item.style.animationDuration = (Math.random() * 5 + 8) + "s";
+
+      document.body.appendChild(item);
+
+      setTimeout(() => item.remove(), 14000);
+    }
+
+    setInterval(createFloating, 1200);
+
+    function burst(){
+      for(let i = 0; i < 28; i++){
+        setTimeout(createFloating, i * 42);
+      }
+    }
+
+    // Celebrate
+    const celebrateBtn = document.getElementById("celebrateBtn");
+
+    celebrateBtn.addEventListener("click", () => {
+      createConfetti(420);
+      burst();
+
+      celebrateBtn.innerHTML = "🥳 Ahmed Is ONE!";
+
+      setTimeout(() => {
+        celebrateBtn.innerHTML = "🎉 Celebrate Again";
+      }, 2500);
+    });
+
+    // Cake
+    const flame = document.getElementById("flame");
+    const blowBtn = document.getElementById("blowBtn");
+    const cakeMessage = document.getElementById("cakeMessage");
+
+    let candleOn = true;
+
+    blowBtn.addEventListener("click", () => {
+      if(candleOn){
+        flame.classList.add("off");
+        candleOn = false;
+
+        blowBtn.innerHTML = "✨ Ahmed's Wish Is Made!";
+        cakeMessage.innerHTML = "May every beautiful wish for Ahmed come true. 💙";
+
+        createConfetti(360);
+        burst();
+      }else{
+        flame.classList.remove("off");
+        candleOn = true;
+
+        blowBtn.innerHTML = "🕯️ Blow Ahmed's Candle";
+        cakeMessage.innerHTML = "Close your eyes and make a beautiful wish for Ahmed.";
+      }
+    });
+
+    // Gift
+    const gift = document.getElementById("gift");
+    const modal = document.getElementById("modal");
+    const closeModal = document.getElementById("closeModal");
+
+    gift.addEventListener("click", () => {
+      gift.classList.add("open");
+      createConfetti(420);
+      burst();
+
+      setTimeout(() => {
+        modal.classList.add("show");
+      }, 700);
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.remove("show");
+
+      setTimeout(() => {
+        gift.classList.remove("open");
+      }, 450);
+    });
+
+    modal.addEventListener("click", event => {
+      if(event.target === modal){
+        modal.classList.remove("show");
+      }
+    });
+
+    // Cursor glow
+    const glow = document.createElement("div");
+
+    glow.style.cssText = `
+      position:fixed;
+      width:380px;
+      height:380px;
+      border-radius:50%;
+      pointer-events:none;
+      z-index:-1;
+      transform:translate(-50%,-50%);
+      background:radial-gradient(circle,rgba(70,180,255,.09),transparent 68%);
+    `;
+
+    document.body.appendChild(glow);
+
+    window.addEventListener("mousemove", event => {
+      glow.style.left = event.clientX + "px";
+      glow.style.top = event.clientY + "px";
+    });
+  </script>
+
+</body>
+</html>
